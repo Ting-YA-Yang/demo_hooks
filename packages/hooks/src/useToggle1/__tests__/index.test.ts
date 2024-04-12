@@ -18,7 +18,7 @@ describe('useToggle1', () => {
     it('setTrue', () => {
         const hook = renderHook(() => useToggle1())
         act(() => {
-            hook.result.current?[1].setTrue()
+            hook.result.current[1].setTrue()
         })
         expect(hook.result.current[0]).toBeTruthy()
     })

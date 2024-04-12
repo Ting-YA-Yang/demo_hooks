@@ -13,7 +13,7 @@ interface Actions<T> {
     setValue: (value: T) => void
 }
 
-function useToogle1<T = boolean>(): [T | Actions<T>]
+function useToogle1<T = boolean>(): [T, Actions<T>]
 
 function useToogle1<T>(defaultValue: T = false as unknown as T) {
     const [value, setValue] = useState<T>(defaultValue)
