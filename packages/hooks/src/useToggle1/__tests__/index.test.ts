@@ -22,4 +22,21 @@ describe('useToggle1', () => {
         })
         expect(hook.result.current[0]).toBeTruthy()
     })
+
+    it('setFalse', () => {
+        const hook = renderHook(() => useToggle1())
+        act(() => {
+            hook.result.current[1].setFalse()
+        })
+        expect(hook.result.current[0]).toBeFalsy()
+    })
+
+    it('setValue', () => {
+        const hook = renderHook(() => useToggle1())
+        const str = "Hello World"
+        act(() => {
+            hook.result.current[1].setValue(str)
+        })
+        expect(hook.result.current[0]).toEqual(str)
+    })
 })
